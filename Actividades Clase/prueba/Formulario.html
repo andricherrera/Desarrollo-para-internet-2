@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD con PHP </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Formulario de Ejemplo</h2></div>
+                    
+                </div>
+            </div> 
+            <br><br>  
+			<div class="row">
+				<form method="post" action="" >
+				<div class="col-md-12">
+					<label>Nombre:</label>
+                    <input type="text" required pattern="^[A-Za-z -]+$" maxlength="20" name="nombre" id="nombre" class='form-control' >
+                    
+				</div>
+				<div class="col-md-6">
+					<label>Email:</label>
+                    <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="50" name="email" id="email" class='form-control' >
+                     
+				</div>
+				<div class="col-md-6">
+					<label>Telefono:</label>
+                    <input type="number" required pattern="[0-9]{10}"  maxlength="10" name="telefono" id="telefono" class='form-control'  >
+                     
+				</div>
+				<div class="col-md-12">
+					<label>Dirección:</label>
+                    <textarea required  maxlength="255" name="direccion" id="direccion" class='form-control' required ></textarea>
+                     
+				</div>
+				
+				<div class="col-md-12 pull-right">
+				<hr>
+					<button name="submit" value="Submit" class="btn btn-primary">Guardar datos</button>
+				</div>
+				</form>
+			</div>
+        </div>
+    </div>
+    
+</body>
+</html>

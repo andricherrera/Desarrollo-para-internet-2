@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRUD con PHP </title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function formValidation()
+    {
+        var unombre = document.registration.nombre;
+        var utelefono = document.registration.telefono;
+        var uemail = document.registration.email;
+        var udireccion = document.registration.direccion;
+    
+    
+        if(allLetter(unombre))
+        {
+            if(ValidateEmail(uemail))
+            {           
+                if(allnumeric(utelefono))
+                {
+                    if(alphanumeric(udireccion))
+                    {
+    
+                    }
+                                    
+                }
+                    
+            }
+        }
+        return false;
+     
+    
+    function allLetter(unonmbre)
+    { 
+        var letters = /^[A-Za-z -]+$/;
+        if(unombre.value.match(letters))
+        {
+            return true;
+        }
+        else
+        {
+        alert('Solo acepta letras y espacios');
+        unombre.focus();
+        return false;
+        }
+    }
+    
+    function allnumeric(utelefono)
+    { 
+        var numbers = /^[0-9]+$/;
+        if(utelefono.value.match(numbers))
+        {
+            return true;
+        }
+        else
+        {
+        alert('Solo acepta numeros');
+        utelefono.focus();
+        return false;
+        }
+    }
+    
+    function ValidateEmail(uemail)
+    {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(uemail.value.match(mailformat))
+        {
+            return true;
+        }
+        else
+        {
+        alert("Escribe un email valido");
+        uemail.focus();
+        return false;
+        }
+     }
+     function alphanumeric(udireccion)
+    { 
+        var letters = /^[A-Za-z0-9 -]+$/;
+        if(udireccion.value.match(letters))
+        {
+            return true;
+        }
+        else
+        {
+            alert('Solo letras y numeros');
+            udireccion.focus();
+            return false;
+        }
+    }
+    }
+    
+    </script>
+    
+</head>
+<body>
+	<div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Formulario de Ejemplo</h2></div>
+                    
+                </div>
+            </div> 
+            <br><br>  
+			<div class="row">
+				<form method="post" name='registration' onSubmit="return formValidation();" >
+				<div class="col-md-12">
+					<label>Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" class='form-control'>
+                    
+				</div>
+				<div class="col-md-6">
+					<label>Email:</label>
+                    <input type="text" name="email" id="email" class='form-control' >
+                     
+				</div>
+				<div class="col-md-6">
+					<label>Telefono:</label>
+                    <input type="text" name="telefono" id="telefono" class='form-control' >
+                     
+				</div>
+				<div class="col-md-12">
+					<label>Dirección:</label>
+                    <textarea  name="direccion" id="direccion" class='form-control' ></textarea>
+                     
+				</div>
+				
+				<div class="col-md-12 pull-right">
+				<hr>
+					<button name="submit" value="Submit" class="btn btn-primary">Guardar datos</button>
+				</div>
+				</form>
+			</div>
+        </div>
+    </div>
+    
+</body>
+</html>
